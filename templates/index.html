@@ -13,12 +13,18 @@
     <h1>To-Do List</h1>
     <form method="POST" action="/add">
       <input type="text" name="task" placeholder="Add a new task" required />
+      <select name="priority" required>
+        <option value="">Select Priority</option>
+        <option class="high-priority" value="High">High</option>
+        <option class="medium-priority" value="Medium">Medium</option>
+        <option class="low-priority" value="Low">Low</option>
+      </select>
       <button type="submit">Add Task</button>
     </form>
 
     <ul>
       {% for todo in todos %}
-      <li>
+      <li class="{{ todo.priority.lower() }}">
         <form method="POST" action="/update/{{ loop.index0 }}">
           <input
             type="checkbox"
@@ -38,18 +44,7 @@
           action="/delete/{{ loop.index0 }}"
           style="display: inline"
         >
-          <button
-            type="submit"
-            style="
-              background-color: #f7af9d;
-              color: rgb(97, 90, 90);
-              border: none;
-              padding: 5px;
-              border-radius: 4px;
-            "
-          >
-            Delete
-          </button>
+          <button type="submit" class="delete-button">Delete</button>
         </form>
       </li>
       {% endfor %}

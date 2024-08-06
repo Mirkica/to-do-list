@@ -1,8 +1,11 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #b0d0d3;
+  background-color: #bddcdf;
   margin: 0;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -26,7 +29,8 @@ input[type="text"] {
 
 button {
   padding: 10px;
-  background-color: #f7af9d;
+  margin-left: 10px;
+  background-color: #c08497;
   color: rgb(97, 90, 90);
   border: none;
   border-radius: 4px;
@@ -40,19 +44,73 @@ button:hover {
 ul {
   list-style-type: none;
   padding: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #c08497;
+  background: #f7af9d;
   border: 1px solid #a57786bd;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input[type="checkbox"] {
   margin-right: 10px;
+}
+
+li.high {
+  border-left: 10px solid rgb(223, 3, 3);
+}
+
+li.medium {
+  border-left: 10px solid rgb(255, 136, 0);
+}
+
+li.low {
+  border-left: 10px solid rgb(31, 176, 31);
+}
+
+.priority {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #c08497;
+  color: rgb(97, 90, 90);
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #cd9385;
+}
+
+label {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.high-priority {
+  color: red;
+}
+
+.medium-priority {
+  color: orange;
+}
+
+.low-priority {
+  color: green;
 }

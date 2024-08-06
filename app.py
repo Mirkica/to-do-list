@@ -12,7 +12,8 @@ def index():
 @app.route('/add', methods=['POST'])
 def add_task():
     task = request.form.get('task')
-    todos.append({'task': task, 'completed': False})
+    priority = request.form.get('priority')
+    todos.append({'task': task, 'completed': False, 'priority': priority})
     return redirect(url_for('index'))
 
 @app.route('/update/<int:task_index>', methods=['POST'])
