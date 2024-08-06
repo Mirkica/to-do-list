@@ -118,24 +118,27 @@ label {
 /* Responsive Styles */
 @media (max-width: 600px) {
   li {
-    flex-direction: row; /* Align items in a row on larger screens */
-    align-items: center; /* Center items vertically */
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 5px;
+    width: 100%;
   }
 
   form {
-    flex-direction: row; /* Align form elements in a row */
-    justify-content: space-between; /* Space between elements */
-    width: 100%; /* Make form full-width */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   input[type="text"],
   select {
-    margin-right: 10px; /* Add space between input and select */
-    margin-bottom: 0; /* Remove bottom margin */
-    flex-grow: 1; /* Allow inputs to take available space */
+    margin-right: 10px;
+    margin-bottom: 0;
+    flex-grow: 1;
   }
 
   button {
-    width: auto; /* Button can be automatic size */
+    width: auto;
   }
 }
