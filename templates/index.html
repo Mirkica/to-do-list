@@ -22,6 +22,7 @@
       <button type="submit">Add Task</button>
     </form>
 
+    <div id="task-counter">0 out of 0 tasks finished</div>
     <ul>
       {% for todo in todos %}
       <li class="{{ todo.priority.lower() }}">
@@ -49,5 +50,7 @@
       </li>
       {% endfor %}
     </ul>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
