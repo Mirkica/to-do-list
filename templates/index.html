@@ -33,6 +33,24 @@
           />
           <label>{{ todo.task }}</label>
         </form>
+        <form
+          method="POST"
+          action="/delete/{{ loop.index0 }}"
+          style="display: inline"
+        >
+          <button
+            type="submit"
+            style="
+              background-color: #f7af9d;
+              color: rgb(97, 90, 90);
+              border: none;
+              padding: 5px;
+              border-radius: 4px;
+            "
+          >
+            Delete
+          </button>
+        </form>
       </li>
       {% endfor %}
     </ul>

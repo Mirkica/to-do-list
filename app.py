@@ -21,5 +21,12 @@ def update_task(task_index):
     todos[task_index]['completed'] = not todos[task_index]['completed']
     return redirect(url_for('index'))
 
+@app.route('/delete/<int:task_index>', methods=['POST'])
+def delete_task(task_index):
+    # Remove the task from the list
+    todos.pop(task_index)
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
