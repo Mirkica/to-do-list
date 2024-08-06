@@ -7,13 +7,29 @@
   </head>
   <body>
     <h1>To-Do List</h1>
-    <form action="/add" method="POST">
-      <input type="text" name="todo" placeholder="Enter a new task" required />
-      <button type="submit">Add</button>
+    <form method="POST" action="/add">
+      <input type="text" name="task" placeholder="Add a new task" required />
+      <button type="submit">Add Task</button>
     </form>
+
     <ul>
       {% for todo in todos %}
-      <li>{{ todo }}</li>
+      <li>
+        <form method="POST" action="/update/{{ loop.index0 }}">
+          <input
+            type="checkbox"
+            name="completed"
+            onchange="this.form.submit()"
+            {%
+            if
+            todo.completed
+            %}checked{%
+            endif
+            %}
+          />
+          <label>{{ todo.task }}</label>
+        </form>
+      </li>
       {% endfor %}
     </ul>
   </body>
