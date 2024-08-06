@@ -3,11 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # Sample in-memory data store for tasks
-todos = [
-    {'task': 'Buy groceries', 'completed': False},
-    {'task': 'Clean the house', 'completed': False},
-    {'task': 'Prepare dinner', 'completed': False}
-]
+todos = []
 
 @app.route('/')
 def index():
